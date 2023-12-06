@@ -2,23 +2,65 @@
 <html>
   <head>
     <title>Speech Synthesis Example</title>
-    <style>
-      select,
-      input,
-      button {
-        margin: 10px;
-        padding: 5px;
-        font-size: 16px;
-      }
-    </style>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <input type="text" id="textInput" placeholder="Enter text to speak" />
-    <select id="voices"></select>
-    <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1" />
-    <input type="range" id="pitch" min="0.5" max="2" step="0.1" value="1" />
-    <button id="speakBtn">Speak</button>
-    <button id="stopBtn">Stop</button>
+    <div class="container">
+      <h1 class="text-center">Speech Synthesis</h1>
+      <div class="input-group">
+        <input
+          type="text"
+          class="form-control"
+          id="textInput"
+          placeholder="Enter text to speak"
+        />
+        <button class="btn btn-outline-primary" id="speakBtn" type="button">
+          Speak
+        </button>
+        <button class="btn btn-outline-secondary" type="button" id="stopBtn">
+          Stop
+        </button>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-md-3">
+          <label for="voices" class="form-label">Voice</label>
+          <select id="voices" class="form-control"></select>
+        </div>
+        <div class="col-md-4">
+          <label for="rate" class="form-label">Rate</label>
+          <input
+            type="range"
+            id="rate"
+            min="0.5"
+            max="2"
+            step="0.1"
+            value="1"
+            class="form-range"
+          />
+        </div>
+        <div class="col-md-5">
+          <label for="pitch" class="form-label">Pitch</label>
+          <input
+            type="range"
+            id="pitch"
+            min="0.5"
+            max="2"
+            step="0.1"
+            value="1"
+            class="form-range"
+          />
+        </div>
+      </div>
+    </div>
+
     <script src="index.js"></script>
   </body>
 </html>
